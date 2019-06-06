@@ -15,6 +15,7 @@ cor(mouse_data, use = "complete.obs") # fill in missing data
 #install.packages("Hmisc")
 library("Hmisc")
 matrix_2 <- rcorr(as.matrix(mouse_data))
+# The output is a list containing 
 matrix_2
 
 mouse_data.cor = cor(mouse_data, method = c("spearman"))
@@ -26,3 +27,6 @@ library(corrplot)
 corrplot(mouse_data.cor)
 palette = colorRampPalette(c("green", "white", "red")) (45)
 heatmap(x = mouse_data.cor, col = palette, symm = TRUE)
+library(corrgram)
+corrgram(mouse_data)
+
